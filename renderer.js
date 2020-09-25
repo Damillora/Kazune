@@ -6,6 +6,7 @@
 // process.
 var chatAuthors = {};
 var authors = [];
+var authUrl = '';
 
 function prefixSuffix(arr, prefix, suffix) {
   var result = "";
@@ -27,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('ask-auth-url', (event) => {
      $("#auth-dialog").show();
      var URL = event.detail;
-     $("#auth-url").attr('href',event.detail);
+     authUrl = event.detail;
   });
 
   function submitVideoUrl() {
@@ -44,8 +45,16 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   var buttonVideoIdSubmit = $('#video-id-submit');
-  console.log(buttonVideoIdSubmit);
   buttonVideoIdSubmit.click(submitVideoUrl);
+
+  var buttonAuthSubmit = $('#auth-submit');
+  buttonAuthSubmit.click(submitAuthCode);
+
+  var linkAuthUrl = $("#auth-url");
+  linkAuthUrl.click(() => {
+    var event = new CustomEvent('open-link', { detail: authUrl });
+    window.dispatchEvent(event);
+  });
   window.addEventListener('chat-author', (event) => { 
     $("#control-panel").show();
     console.log('Chat author get');
@@ -67,6 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
     $('#movie').stop();
     $('#movie').show();
     $('#movie').css({'bottom':  0, 'position': 'absolute', left: 0, width: windowWidth });
+    $('#opening').text($('#opening-text').val());
     $('#movie').animate({'bottom': windowHeight+movieHeight}, duration, 'linear', function() {       
       $('#control-panel').show();
       $('#movie').stop();

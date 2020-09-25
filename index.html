@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <link rel="stylesheet" href="./index.css">
-    <title>Hello World!</title>
+    <title>Kazune</title>
   </head>
   <body>
     <!-- You can also require other files to run in this process -->
@@ -15,14 +15,17 @@
       <button id="video-id-submit">Set Video ID</button>
     </div>
     <div id="auth-dialog">
-      <p>Please authenticate using <a id="auth-url" href="/">this url</a></p>
+      <p>Please authenticate using <a id="auth-url" href="#">this url</a></p>
+      <p>Input auth code from the url here: <input id="auth-code" type=text placeholder="Auth Code"></input></p>
+      <button id="auth-submit">Set Video ID</button>
     </div>
     <div id="control-panel">
       <button id="movie-start">Start Movie</button>
       <p>Duration: <input id="duration" type=text" value=5000></p>
+      <p>Opening Text: <input id="opening-text" type=text" value='Thank you all for watching'></p>
     </div>
     <div id="movie">
-      Yuika Mitsumine is best girl
+      <div id="opening"></div>
       <div id="credits"></div>
     </div>
     <script src="./renderer.js"></script>

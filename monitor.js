@@ -122,7 +122,6 @@ function getChannel(auth) {
         console.log('The API returned an error: ' + err);
         return;
       }
-      console.log("Got Video info");
       var liveBroadcast = response.data.items[0];
       var liveChatId = liveBroadcast.snippet.liveChatId;
       getMessages(service,auth,liveChatId);

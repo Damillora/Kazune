@@ -14,8 +14,7 @@ $ yarn install
 Get a client_secret.json file using the instructions on [YouTube's API Node.js Quickstart](https://developers.google.com/youtube/v3/quickstart/nodejs), then
 
 ```
-$ node index.js
-Enter the video ID: <enter your ID>
+$ electron .
 ```
 
 Enjoy the Proof-of-Concept!
