@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="./index.css">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <!-- You can also require other files to run in this process -->
+    <div id="video-id-dialog">
+      <input id="video-id" type=text placeholder="Video ID"></input>
+      <button id="video-id-submit">Set Video ID</button>
+    </div>
+    <div id="auth-dialog">
+      <p>Please authenticate using <a id="auth-url" href="/">this url</a></p>
+    </div>
+    <div id="control-panel">
+      <button id="movie-start">Start Movie</button>
+      <p>Duration: <input id="duration" type=text" value=5000></p>
+    </div>
+    <div id="movie">
+      Yuika Mitsumine is best girl
+      <div id="credits"></div>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

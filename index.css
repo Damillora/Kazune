@@ -1,0 +1,10 @@
+html {
+  background: #3b90c6;
+}
+#movie {
+  position: absolute;
+  text-align: center;
+}
+#movie #credits {
+  text-align: center;
+}
